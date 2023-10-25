@@ -51,8 +51,8 @@ function myGetMessages(source, label, importedLabel) {
     if (handlerResult instanceof Error) {
       return new Error(handlerResult);
     } else {
-      thread.remove(label);
-      thread.add(importedLabel);
+      thread.removeLabel(label);
+      thread.addLabel(importedLabel);
     }
   });
 }
