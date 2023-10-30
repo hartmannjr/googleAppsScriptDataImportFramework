@@ -25,7 +25,7 @@ function importSource1Data(messages,source) //modify [Source1] accordingly
   var data = [];
   for (let i = 0; i < messages.length; i++)
   {
-    var msg = messages[j].getPlainBody().toString();
+    var msg = messages[i].getPlainBody().toString();
     // more logic here as needed
     data.push([msg]);
   }
