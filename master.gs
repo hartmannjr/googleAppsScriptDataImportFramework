@@ -31,7 +31,7 @@ function run() {
 
 function myGetMessages(source, label, importedLabel) {
   if (label === null) {
-    let errormessage = "Unable to process emails from source: " + source + ". Label not found."
+    let errormessage = "Unable to process emails from source: " + source + ". Label not found.";
     console.error(errormessage);
     return new Error(errormessage);
   }
