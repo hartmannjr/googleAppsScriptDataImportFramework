@@ -68,9 +68,14 @@ function getDataHandler(source) {
 }
 
 function sendErrorEmail(errorlog) {
+  var currentTime = new Date();
+  var formattedTime = Utilities.formatDate(currentTime, Session.getScriptTimeZone(), 'yyyy-MM-dd HH:mm:ss');
   var recipient = Session.getEffectiveUser().getEmail();
-  var subject = "Error results from House Data Import Job"
-  var body = "The follow error(s) occured while running the House Data Import Job:\n\n"; 
+  var subject = "Error results from House Data Import Job";
+  var body = "Job Time: " + formattedTime + 
+  "\nThe follow error";
+  if (errorlog > 1) {body += "s"}
+  body += " occured while running the House Data Import Job:\n\n"; 
   for (var i = 0; i < errorlog.length; i++)
   {
     body += errorlog[i] + "\n";
